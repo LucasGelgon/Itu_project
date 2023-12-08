@@ -1,0 +1,4 @@
+#ignore Files
+
+bin/
+.settings/
