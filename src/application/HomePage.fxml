@@ -10,64 +10,42 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomePageController">
    <children>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #04D632;">
+      <VBox prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Circle fill="DODGERBLUE" radius="32.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: EB0A0A;" />
-            <Label text="Fred Don">
-               <font>
-                  <Font name="Broadway" size="19.0" />
-               </font>
-            </Label>
-            <Button mnemonicParsing="false" onAction="#FeedPoll_button" text="FeedPoll">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#MyPolls_button" text="My Polls">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#MyAccount_button" text="My account">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#Logout_button" text="Logout">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-         </children>
-      </HBox>
-      <AnchorPane prefHeight="303.0" prefWidth="600.0" style="-fx-background-color: #052D10;">
-         <children>
-            <HBox alignment="CENTER" layoutX="21.0" prefHeight="204.0" prefWidth="579.0" spacing="50.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #04D632;">
                <children>
-                  <BarChart prefHeight="158.0" prefWidth="216.0" style="-fx-background-color: #FFF;">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </BarChart>
-                  <BarChart prefHeight="158.0" prefWidth="216.0" style="-fx-background-color: #FFF;">
-                     <xAxis>
-                        <CategoryAxis side="BOTTOM" />
-                     </xAxis>
-                     <yAxis>
-                        <NumberAxis side="LEFT" />
-                     </yAxis>
-                  </BarChart>
+                  <Circle fill="DODGERBLUE" radius="32.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: EB0A0A;" />
+                  <Label text="Fred Don">
+                     <font>
+                        <Font name="Broadway" size="19.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#FeedPoll_button" text="FeedPoll">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#MyPolls_button" text="My Polls">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#MyAccount_button" text="My account">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#Logout_button" text="Logout">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
-               <padding>
-                  <Insets top="20.0" />
-               </padding>
             </HBox>
-            <Pagination layoutX="14.0" layoutY="245.0" pageCount="3" prefHeight="44.0" prefWidth="572.0" />
+            <HBox prefHeight="300.0" prefWidth="600.0" />
          </children>
-      </AnchorPane>
+      </VBox>
    </children>
-</VBox>
+</AnchorPane>

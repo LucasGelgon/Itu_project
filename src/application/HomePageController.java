@@ -16,7 +16,7 @@ public class HomePageController {
 	private Parent root;
 	
 	public void FeedPoll_button(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("./UI/HomePage.fxml"));
+		root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -24,7 +24,7 @@ public class HomePageController {
 	}
 	
 	public void MyPolls_button(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("./UI/MyPolls.fxml"));
+		root = FXMLLoader.load(getClass().getResource("MyPolls.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -33,7 +33,7 @@ public class HomePageController {
 	}
 	
 	public void MyAccount_button(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("./UI/AccountPage.fxml"));
+		root = FXMLLoader.load(getClass().getResource("AccountPage.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -42,7 +42,7 @@ public class HomePageController {
 	}
 	
 	public void Logout_button(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("./UI/ConnectionPage.fxml"));
+		root = FXMLLoader.load(getClass().getResource("ConnectionPage.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
