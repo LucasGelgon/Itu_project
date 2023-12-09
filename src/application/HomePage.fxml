@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomePageController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #04D632;">
+         <children>
+            <Circle fill="DODGERBLUE" radius="32.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: EB0A0A;" />
+            <Label text="Fred Don">
+               <font>
+                  <Font name="Broadway" size="19.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#FeedPoll_button" text="FeedPoll" />
+            <Button mnemonicParsing="false" onAction="#MyPolls_button" text="My Polls" />
+            <Button mnemonicParsing="false" onAction="#MyAccount_button" text="My account" />
+            <Button mnemonicParsing="false" onAction="#Logout_button" text="Logout" />
+         </children>
+      </HBox>
+      <AnchorPane prefHeight="289.0" prefWidth="600.0">
+         <children>
+            <Pagination layoutX="13.0" layoutY="7.0" pageCount="3" prefHeight="281.0" prefWidth="574.0" />
+            <BarChart layoutX="27.0" layoutY="36.0" prefHeight="158.0" prefWidth="216.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <BarChart layoutX="300.0" layoutY="36.0" prefHeight="158.0" prefWidth="216.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </BarChart>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
