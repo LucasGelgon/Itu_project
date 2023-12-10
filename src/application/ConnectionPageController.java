@@ -35,9 +35,9 @@ public class ConnectionPageController {
 	
 	@FXML
 	public void Login_button(ActionEvent event) throws IOException {
-		
-		if (model.check_user(username_field.getText(), password_field.getText())) {
-			
+		int index = model.check_user(username_field.getText(), password_field.getText());
+		if (index>=0) {
+			model.setIndexUser(index);
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
 			root = loader.load();
 			HomePageController controller = loader.getController() ;

@@ -7,7 +7,16 @@ public class Model {
 	
 	private ArrayList<ArrayList<String>> user_password;
 	private String user;
-	private ArrayList<Poll> poll;
+	private int index_user;
+	private ArrayList<ArrayList<Poll>> polls;
+	
+	public void setIndexUser(int index) {
+		this.index_user = index;
+	}
+	
+	public int getIndexUser() {
+		return index_user;
+	}
 	
 	public String getUser() {
 		return user;
@@ -18,34 +27,33 @@ public class Model {
 	}
 	
 	public ArrayList<Poll> get_Poll(){
-		return poll;
+		return polls.get(this.index_user);
 	}
 
 	public Model () {
 		user_password = new ArrayList<ArrayList<String>>();
 		user_password.add(new ArrayList<String>());
 		user_password.add(new ArrayList<String>());
-		user_password.get(0).add("Robin");
-		user_password.get(1).add("toto");
-		poll = new ArrayList<Poll>();
-		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question1.txt"));
-		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question2.txt"));
+		polls = new ArrayList<ArrayList<Poll>>();
+		add_user("Robin","toto");
+		
+		
 		
 		
 		
 	}
 	
-    public boolean check_user(String user,String password) {
+    public int check_user(String user,String password) {
     	int index = user_password.get(0).indexOf(user);
     	if (index == -1) {
-    		return false;
+    		return -1;
     	}
     	if(user_password.get(1).get(index).equals(password)) {
     		this.user = user;
-    		return true;
+    		return index;
     	}
     	
-        return false;
+        return -1;
     }
     
     public boolean add_user (String user, String password) {
@@ -54,6 +62,11 @@ public class Model {
     	}
     	user_password.get(0).add(user);
 		user_password.get(1).add(password);
+		int index = user_password.get(0).size();
+		polls.add(new ArrayList<Poll>());
+		polls.get(index-1).add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question1.txt"));
+		polls.get(index-1).add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question2.txt"));
+		
 		
 		return true;
     }
