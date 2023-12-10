@@ -103,24 +103,56 @@ public class HomePageController {
 	}
 	
 	@FXML
-	public void Q1_button(ActionEvent event) throws IOException {
-		model.get_Poll().get(0).set_answered(true);
+	public void Q1_button_yes(ActionEvent event) throws IOException {
+		model.setAnswered(model.getIndexUser(), 0, true);
+		model.get_Poll().get(0).set_raw_data(1);
+		refresh_Q1();
 		hbox_Q1.setVisible(false);
 		vbox_Q1.setVisible(true);
 		
 	}
 	
 	@FXML
-	public void Q2_button(ActionEvent event) throws IOException {
-		model.get_Poll().get(1).set_answered(true);
+	public void Q1_button_no(ActionEvent event) throws IOException {
+		model.setAnswered(model.getIndexUser(), 0, true);
+		model.get_Poll().get(0).set_raw_data(2);
+		refresh_Q1();
+		hbox_Q1.setVisible(false);
+		vbox_Q1.setVisible(true);
+		
+	}
+	
+	@FXML
+	public void Q2_button_yes(ActionEvent event) throws IOException {
+		model.setAnswered(model.getIndexUser(), 1, true);
+		model.get_Poll().get(1).set_raw_data(2);
+		refresh_Q2();
 		hbox_Q2.setVisible(false);
 		vbox_Q2.setVisible(true);
 		
 	}
 	
 	@FXML
+	public void Q2_button_no(ActionEvent event) throws IOException {
+		model.setAnswered(model.getIndexUser(), 1, true);
+		model.get_Poll().get(1).set_raw_data(2);
+		refresh_Q2();
+		hbox_Q2.setVisible(false);
+		vbox_Q2.setVisible(true);
+		
+	}
+	
+	
+	
+	@FXML
 	public void Q3_button(ActionEvent event) throws IOException {
-		model.get_Poll().get(2).set_answered(true);
+		if(CB_Q3.getSelectionModel().getSelectedIndex()<0) {
+			AlertPopUp.afficherAlerte(AlertType.ERROR, "Error", "No answer selected");
+			return;
+		}
+		model.setAnswered(model.getIndexUser(), 2, true);
+		model.get_Poll().get(2).set_raw_data(CB_Q3.getSelectionModel().getSelectedIndex()+1);
+		refresh_Q3();
 		hbox_Q3.setVisible(false);
 		vbox_Q3.setVisible(true);
 		
@@ -128,7 +160,7 @@ public class HomePageController {
 	
 	
 	public boolean check_poll(int i){
-            return(model.get_Poll().get(i-1).get_answered() == true);
+            return((model.getAnswered().get(i-1))== true);
             
 	}
 	

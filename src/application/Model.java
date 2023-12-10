@@ -8,7 +8,16 @@ public class Model {
 	private ArrayList<ArrayList<String>> user_password;
 	private String user;
 	private int index_user;
-	private ArrayList<ArrayList<Poll>> polls;
+	private ArrayList<ArrayList<Boolean>> answered;
+	private ArrayList<Poll> poll;
+	
+	public ArrayList<Boolean> getAnswered() {
+		return answered.get(index_user);
+	}
+
+	public void setAnswered(int index,int poll_index,boolean value) {
+		this.answered.get(index).set(poll_index, value); 
+	}
 	
 	public void setIndexUser(int index) {
 		this.index_user = index;
@@ -27,14 +36,15 @@ public class Model {
 	}
 	
 	public ArrayList<Poll> get_Poll(){
-		return polls.get(this.index_user);
+		return poll;
 	}
 
 	public Model () {
 		user_password = new ArrayList<ArrayList<String>>();
 		user_password.add(new ArrayList<String>());
 		user_password.add(new ArrayList<String>());
-		polls = new ArrayList<ArrayList<Poll>>();
+		poll = new ArrayList<Poll>();
+		answered = new ArrayList<ArrayList<Boolean>>();
 		add_user("Robin","toto");
 		
 		
@@ -62,12 +72,13 @@ public class Model {
     	}
     	user_password.get(0).add(user);
 		user_password.get(1).add(password);
-		int index = user_password.get(0).size();
-		polls.add(new ArrayList<Poll>());
-		polls.get(index-1).add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question1.txt"));
-		polls.get(index-1).add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question2.txt"));
-		polls.get(index-1).add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question3.txt"));
-		
+		answered.add(new ArrayList<Boolean>());
+		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question1.txt"));
+		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question2.txt"));
+		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question3.txt"));
+		answered.get(user_password.get(0).indexOf(user)).add(false);
+		answered.get(user_password.get(0).indexOf(user)).add(false);
+		answered.get(user_password.get(0).indexOf(user)).add(false);
 		
 		return true;
     }

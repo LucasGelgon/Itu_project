@@ -61,8 +61,8 @@
                         </Label>
                         <HBox fx:id="hbox_Q1" alignment="TOP_CENTER" prefHeight="27.0" prefWidth="250.0" spacing="20.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#Q1_button" text="Yes" />
-                              <Button mnemonicParsing="false" onAction="#Q1_button" text="No" />
+                              <Button mnemonicParsing="false" onAction="#Q1_button_yes" text="Yes" />
+                              <Button mnemonicParsing="false" onAction="#Q1_button_no" text="No" />
                            </children>
                         </HBox>
                         <Separator prefHeight="11.0" prefWidth="250.0" style="-fx-background-color: #0000;" />
@@ -81,8 +81,8 @@
                            </font></Label>
                         <HBox fx:id="hbox_Q2" alignment="TOP_CENTER" prefHeight="27.0" prefWidth="250.0" spacing="20.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#Q2_button" text="Yes" />
-                              <Button mnemonicParsing="false" onAction="#Q2_button" text="No" />
+                              <Button mnemonicParsing="false" onAction="#Q2_button_yes" text="Yes" />
+                              <Button mnemonicParsing="false" onAction="#Q2_button_no" text="No" />
                            </children>
                         </HBox>
                         <Separator prefHeight="11.0" prefWidth="250.0" style="-fx-background-color: #0000;" />

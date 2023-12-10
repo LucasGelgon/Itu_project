@@ -7,12 +7,11 @@ public class Poll {
 	private enum Type {BOOL,QCM};
 	private Type type;
 	private ArrayList<Double> values;
-	private Boolean answered;
+	private ArrayList<Double> raw_data;
+	
 	private String[] choices;
 	
 	public Poll(String question, Type type,ArrayList<Double> values) {
-		
-		this.answered = false;
 		this.question = question;
 		this.type = type;
 		this.values = new ArrayList<Double>(values);
@@ -20,18 +19,24 @@ public class Poll {
 	
 	public Poll(ArrayList<String> list) {
 		this.question = list.get(0);
-		this.answered = false;
 		this.type = Type.valueOf(list.get(1));
 		this.values = new ArrayList<Double>();
+		this.raw_data = new ArrayList<Double>();
 		if (this.type == Type.BOOL) {
-			this.values.add(Double.valueOf(list.get(2)));
-			this.values.add(Double.valueOf(list.get(3)));
+			this.raw_data.add(Double.valueOf(list.get(2)));
+			this.raw_data.add(Double.valueOf(list.get(3)));
+			this.raw_data.add(Double.valueOf(list.get(4)));
+			this.values.add(Double.valueOf(raw_data.get(1)/raw_data.get(0)));
+			this.values.add(Double.valueOf(raw_data.get(2)/raw_data.get(0)));
+
 		}else if (this.type == Type.QCM) {
-			int nb_item = Integer.valueOf(list.get(2));
+			int nb_item = Integer.valueOf(list.get(3));
+			this.raw_data.add(Double.valueOf(list.get(2)));
 			this.choices = new String [nb_item];
 			for(int i=0; i<this.choices.length;i++) {
-				this.choices[i] = list.get(3+i);
-				this.values.add(Double.valueOf(list.get(i+nb_item+3)));
+				this.choices[i] = list.get(4+i);
+				this.raw_data.add(Double.valueOf(list.get(i+nb_item+4)));
+				this.values.add(Double.valueOf(raw_data.get(i+1)/raw_data.get(0)));
 			}
 		}
 		
@@ -41,9 +46,6 @@ public class Poll {
 		return this.choices;
 	}
 	
-	public void set_answered(boolean bool) {
-		this.answered = bool;
-	}
 	
 	public String getQuestion() {
 		return question;
@@ -57,15 +59,37 @@ public class Poll {
 		return values;
 	}
 	
-	public boolean get_answered() {
-		return this.answered;
-	}
-	
 	public void affiche() {
 		System.out.println(this.question);
 		System.out.println(this.type);
 		System.out.println(this.values);
 	}
 	
+	public void set_values() {
+		if (this.type == Type.BOOL) {
+			
+			
+		}else if (this.type == Type.QCM) {
+			
+			
+		}
+	}
 	
+	public void set_raw_data (int index) {
+		this.raw_data.set(0, this.raw_data.get(0)+1);
+		this.raw_data.set(index, this.raw_data.get(index)+1);
+		this.refresh_values();
+	}
+	
+	public void refresh_values() {
+		if (this.type == Type.BOOL) {
+			this.values.set(0,Double.valueOf(raw_data.get(1)/raw_data.get(0)));
+			this.values.add(1,Double.valueOf(raw_data.get(2)/raw_data.get(0)));
+
+		}else if (this.type == Type.QCM) {
+			for(int i=0; i<this.choices.length;i++) {
+				this.values.set(i,Double.valueOf(raw_data.get(i+1)/raw_data.get(0)));
+			}
+		}
+	}
 }
