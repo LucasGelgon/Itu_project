@@ -8,7 +8,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+/**
+ * Controller of the WelcomePage
+ * @author Robin
+ * 
+ */
 public class WelcomePageController {
 	
 	private Stage stage;
@@ -16,6 +20,7 @@ public class WelcomePageController {
 	private Parent root;
 	private Model model;
 	
+
 	public void set_model(Model model) {
 		this.model = model;
 	}

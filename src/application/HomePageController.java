@@ -10,7 +10,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -52,19 +51,9 @@ public class HomePageController {
 	@FXML private Label label3_Q3;
 	
 	
-	
-	
-	
-	
-	@FXML
-	public void set_user(String user) {
-		username_field.setText(model.getUser());
-	}
-	
-	
 	public void set_model(Model model) {
 		this.model = model;
-		this.set_user(model.getUser());
+		username_field.setText(model.getUser());
 		
 	}
 	

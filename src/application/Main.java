@@ -6,10 +6,21 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
 
-
+/**
+ * Main application class 
+ * 
+ * @author Robin
+ * 
+ */
 public class Main extends Application {
-	@Override
-	public void start(Stage stage) {
+	
+	/**
+	 * 
+	 * Main function of the application. Starts the first scene
+	 * 
+	 * @param stage Main scene of the application
+	 */
+	@Override public void start(Stage stage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("WelcomePage.fxml"));
 			Parent root = loader.load();
@@ -25,6 +36,10 @@ public class Main extends Application {
 		}
 	}
 	
+	/**
+	 * Main function 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

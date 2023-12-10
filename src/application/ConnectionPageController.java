@@ -20,14 +20,10 @@ public class ConnectionPageController {
 	private Parent root;
 	private Model model;
 	
-	@FXML
-	private TextField username_field;
-	@FXML
-	private PasswordField password_field;
-	@FXML
-	private TextField user_field;
-	@FXML
-	private TextField login_field;
+	@FXML private TextField username_field;
+	@FXML private PasswordField password_field;
+	@FXML private TextField user_field;
+	@FXML private TextField login_field;
 	
 	public void set_model(Model model) {
 		this.model = model;
