@@ -22,23 +22,21 @@ public class HomePageController {
 	private Scene scene;
 	private Parent root;
 	private Model model;
-	@FXML
-	private Label username_field;
-	@FXML
-	private HBox hbox_Q1;
-	@FXML
-	private VBox vbox_Q1;
-	@FXML
-	private ProgressBar yes_PB_Q1;
-	@FXML
-	private ProgressBar no_PB_Q1;
-	@FXML 
-	private Label yes_label_Q1;
-	@FXML
-	private Label no_label_Q1;
-	@FXML 
-	private Label label_Q1;
-	
+	@FXML private Label username_field;
+	@FXML private HBox hbox_Q1;
+	@FXML private VBox vbox_Q1;
+	@FXML private ProgressBar yes_PB_Q1;
+	@FXML private ProgressBar no_PB_Q1;
+	@FXML private Label yes_label_Q1;
+	@FXML private Label no_label_Q1;
+	@FXML private Label label_Q1;
+	@FXML private HBox hbox_Q2;
+	@FXML private VBox vbox_Q2;
+	@FXML private ProgressBar yes_PB_Q2;
+	@FXML private ProgressBar no_PB_Q2;
+	@FXML private Label yes_label_Q2;
+	@FXML private Label no_label_Q2;
+	@FXML private Label label_Q2;
 	
 	
 	
@@ -99,12 +97,21 @@ public class HomePageController {
 		
 	}
 	
+	@FXML
+	public void Q2_button(ActionEvent event) throws IOException {
+		model.get_Poll().get(1).set_answered(true);
+		hbox_Q2.setVisible(false);
+		vbox_Q2.setVisible(true);
+		
+	}
+	
 	public boolean check_poll(int i){
             return(model.get_Poll().get(i-1).get_answered() == true);
             
 	}
 	
 	public void refresh_Q1() {
+		label_Q1.setText(model.get_Poll().get(0).getQuestion());
 		yes_PB_Q1.setProgress(model.get_Poll().get(0).getValues().get(0));
 		no_PB_Q1.setProgress(model.get_Poll().get(0).getValues().get(1));
 		yes_label_Q1.setText(model.get_Poll().get(0).getValues().get(0)*100+"%");
@@ -114,10 +121,22 @@ public class HomePageController {
 			vbox_Q1.setVisible(true);
 		}
 	}
+		
+	public void refresh_Q2() {
+			label_Q2.setText(model.get_Poll().get(1).getQuestion());
+			yes_PB_Q2.setProgress(model.get_Poll().get(1).getValues().get(0));
+			no_PB_Q2.setProgress(model.get_Poll().get(1).getValues().get(1));
+			yes_label_Q2.setText(model.get_Poll().get(1).getValues().get(0)*100+"%");
+			no_label_Q2.setText(model.get_Poll().get(1).getValues().get(1)*100+"%");
+			if(check_poll(2)) {
+				hbox_Q2.setVisible(false);
+				vbox_Q2.setVisible(true);
+			}
+	}
 	
 	public void show_HomePage() {
 		refresh_Q1();
-		System.out.println(model.get_Poll().get(0).get_answered());
+		refresh_Q2();
 		
 	}
 	

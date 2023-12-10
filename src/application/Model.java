@@ -28,7 +28,8 @@ public class Model {
 		user_password.get(0).add("Robin");
 		user_password.get(1).add("toto");
 		poll = new ArrayList<Poll>();
-		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Polls_info.txt"));
+		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question1.txt"));
+		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question2.txt"));
 		
 		
 		
