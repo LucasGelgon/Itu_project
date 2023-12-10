@@ -17,7 +17,7 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #04D632;">
                <children>
                   <Circle fill="DODGERBLUE" radius="32.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: EB0A0A;" />
-                  <Label text="Fred Don">
+                  <Label fx:id="username_field" text="Fred Don">
                      <font>
                         <Font name="Broadway" size="19.0" />
                      </font>

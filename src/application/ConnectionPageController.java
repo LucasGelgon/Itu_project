@@ -49,7 +49,7 @@ public class ConnectionPageController {
 			stage.show();
 		}
 		else {
-			AlertPopUp.afficherAlerte(AlertType.ERROR,"Erreur Login","L'identifiant ou le mdp ne correspondent pas");
+			AlertPopUp.afficherAlerte(AlertType.ERROR,"Login error","The username or password do not match");
 		}
 		
 		
@@ -60,9 +60,9 @@ public class ConnectionPageController {
 		
 		boolean info = model.add_user(user_field.getText(), login_field.getText());
 		if (info) {
-			AlertPopUp.afficherAlerte(AlertType.INFORMATION,"Compte ajouté","Votre compte à bien été créé");
+			AlertPopUp.afficherAlerte(AlertType.INFORMATION,"Account added","Your account has been created");
 		}else {
-			AlertPopUp.afficherAlerte(AlertType.ERROR,"Erreur création compte","Vérifier les champs textes");
+			AlertPopUp.afficherAlerte(AlertType.ERROR,"Account creation error","Check text fields");
 		}
 		
 	}
