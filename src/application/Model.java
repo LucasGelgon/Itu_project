@@ -66,6 +66,7 @@ public class Model {
 		polls.add(new ArrayList<Poll>());
 		polls.get(index-1).add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question1.txt"));
 		polls.get(index-1).add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question2.txt"));
+		polls.get(index-1).add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question3.txt"));
 		
 		
 		return true;

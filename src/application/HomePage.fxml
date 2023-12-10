@@ -110,14 +110,14 @@
                            <font>
                               <Font name="Agency FB" size="18.0" />
                            </font></Label>
-                        <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="217.0">
+                        <HBox fx:id="hbox_Q3" alignment="TOP_CENTER" prefHeight="30.0" prefWidth="217.0">
                            <children>
                               <ChoiceBox fx:id="CB_Q3" prefWidth="150.0" />
-                              <Button mnemonicParsing="false" text="Button" />
+                              <Button mnemonicParsing="false" onAction="#Q3_button" text="Button" />
                            </children>
                         </HBox>
                         <Separator prefWidth="200.0" />
-                        <VBox alignment="TOP_CENTER" prefHeight="108.0" prefWidth="217.0">
+                        <VBox fx:id="vbox_Q3" alignment="TOP_CENTER" prefHeight="108.0" prefWidth="217.0" visible="false">
                            <children>
                               <ProgressBar fx:id="PB1_Q3" prefWidth="200.0" progress="0.0" />
                               <Label fx:id="label1_Q3" text="Label" />

@@ -1,4 +1,4 @@
 Do You like Rihanna ?
-Bool
+BOOL
 0.8
 0.2

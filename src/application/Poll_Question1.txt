@@ -1,4 +1,4 @@
-Is Trump a good President 
-Bool
+Was Trump a good President ?
+BOOL
 0.25
 0.75

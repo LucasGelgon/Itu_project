@@ -1,0 +1,9 @@
+What's your favorite meat ? 
+QCM
+3
+chicken
+beef
+turkey
+0.7
+0.2
+0.1

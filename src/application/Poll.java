@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 public class Poll {
 	private String question;
-	private enum Type {Bool,QCM};
+	private enum Type {BOOL,QCM};
 	private Type type;
 	private ArrayList<Double> values;
 	private Boolean answered;
+	private String[] choices;
 	
 	public Poll(String question, Type type,ArrayList<Double> values) {
 		
@@ -21,15 +22,23 @@ public class Poll {
 		this.question = list.get(0);
 		this.answered = false;
 		this.type = Type.valueOf(list.get(1));
-		if (this.type == Type.Bool) {
-			this.values = new ArrayList<Double>();
+		this.values = new ArrayList<Double>();
+		if (this.type == Type.BOOL) {
 			this.values.add(Double.valueOf(list.get(2)));
 			this.values.add(Double.valueOf(list.get(3)));
 		}else if (this.type == Type.QCM) {
-			
+			int nb_item = Integer.valueOf(list.get(2));
+			this.choices = new String [nb_item];
+			for(int i=0; i<this.choices.length;i++) {
+				this.choices[i] = list.get(3+i);
+				this.values.add(Double.valueOf(list.get(i+nb_item+3)));
+			}
 		}
 		
 		
+	}
+	public String[] get_choices() {
+		return this.choices;
 	}
 	
 	public void set_answered(boolean bool) {
