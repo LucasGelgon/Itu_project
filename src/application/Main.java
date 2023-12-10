@@ -11,7 +11,11 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("WelcomePage.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("WelcomePage.fxml"));
+			Parent root = loader.load();
+			WelcomePageController controller = loader.getController() ;
+			Model model = new Model();
+			controller.set_model(model);
 			Scene scene1 = new Scene(root);
 			stage.setScene(scene1);
 			stage.show();

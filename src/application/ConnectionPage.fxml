@@ -59,7 +59,7 @@
                         <Insets left="100.0" right="100.0" top="10.0" />
                      </VBox.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="197.0" text="Register">
+                  <Button mnemonicParsing="false" onAction="#Register_button" prefHeight="25.0" prefWidth="197.0" text="Register">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>

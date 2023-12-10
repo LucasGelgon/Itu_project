@@ -14,6 +14,11 @@ public class HomePageController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+	private Model model;
+	
+	public void set_model(Model model) {
+		this.model = model;
+	}
 	
 	public void FeedPoll_button(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));

@@ -14,9 +14,19 @@ public class WelcomePageController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+	private Model model;
+	
+	public void set_model(Model model) {
+		this.model = model;
+	}
 	
 	public void Start_button(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("ConnectionPage.fxml"));
+		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("ConnectionPage.fxml"));
+		root = loader.load();
+		ConnectionPageController controller = loader.getController() ;
+		controller.set_model(model);
+		
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
