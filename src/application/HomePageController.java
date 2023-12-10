@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +24,7 @@ public class HomePageController {
 	private Scene scene;
 	private Parent root;
 	private Model model;
+	DecimalFormat df = new DecimalFormat("###.##");
 	@FXML private Label username_field;
 	@FXML private HBox hbox_Q1;
 	@FXML private VBox vbox_Q1;
@@ -168,8 +170,8 @@ public class HomePageController {
 		label_Q1.setText(model.get_Poll().get(0).getQuestion());
 		yes_PB_Q1.setProgress(model.get_Poll().get(0).getValues().get(0));
 		no_PB_Q1.setProgress(model.get_Poll().get(0).getValues().get(1));
-		yes_label_Q1.setText(model.get_Poll().get(0).getValues().get(0)*100+"%");
-		no_label_Q1.setText(model.get_Poll().get(0).getValues().get(1)*100+"%");
+		yes_label_Q1.setText(df.format(model.get_Poll().get(0).getValues().get(0)*100)+"%");
+		no_label_Q1.setText(df.format(model.get_Poll().get(0).getValues().get(1)*100)+"%");
 		if(check_poll(1)) {
 			hbox_Q1.setVisible(false);
 			vbox_Q1.setVisible(true);
@@ -180,8 +182,8 @@ public class HomePageController {
 			label_Q2.setText(model.get_Poll().get(1).getQuestion());
 			yes_PB_Q2.setProgress(model.get_Poll().get(1).getValues().get(0));
 			no_PB_Q2.setProgress(model.get_Poll().get(1).getValues().get(1));
-			yes_label_Q2.setText(model.get_Poll().get(1).getValues().get(0)*100+"%");
-			no_label_Q2.setText(model.get_Poll().get(1).getValues().get(1)*100+"%");
+			yes_label_Q2.setText(df.format(model.get_Poll().get(1).getValues().get(0)*100)+"%");
+			no_label_Q2.setText(df.format(model.get_Poll().get(1).getValues().get(1)*100)+"%");
 			if(check_poll(2)) {
 				hbox_Q2.setVisible(false);
 				vbox_Q2.setVisible(true);
@@ -191,9 +193,9 @@ public class HomePageController {
 	public void refresh_Q3() {
 		CB_Q3.getItems().addAll(model.get_Poll().get(2).get_choices());
 		label_Q3.setText(model.get_Poll().get(2).getQuestion());
-		label1_Q3.setText(model.get_Poll().get(2).get_choices()[0]+" "+model.get_Poll().get(2).getValues().get(0)*100+"%");
-		label2_Q3.setText(model.get_Poll().get(2).get_choices()[1]+" "+model.get_Poll().get(2).getValues().get(1)*100+"%");
-		label3_Q3.setText(model.get_Poll().get(2).get_choices()[2]+" "+model.get_Poll().get(2).getValues().get(2)*100+"%");
+		label1_Q3.setText(model.get_Poll().get(2).get_choices()[0]+" "+df.format(model.get_Poll().get(2).getValues().get(0)*100)+"%");
+		label2_Q3.setText(model.get_Poll().get(2).get_choices()[1]+" "+df.format(model.get_Poll().get(2).getValues().get(1)*100)+"%");
+		label3_Q3.setText(model.get_Poll().get(2).get_choices()[2]+" "+df.format(model.get_Poll().get(2).getValues().get(2)*100)+"%");
 		PB1_Q3.setProgress(model.get_Poll().get(2).getValues().get(0));
 		PB2_Q3.setProgress(model.get_Poll().get(2).getValues().get(1));
 		PB3_Q3.setProgress(model.get_Poll().get(2).getValues().get(2));

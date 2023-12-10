@@ -65,15 +65,6 @@ public class Poll {
 		System.out.println(this.values);
 	}
 	
-	public void set_values() {
-		if (this.type == Type.BOOL) {
-			
-			
-		}else if (this.type == Type.QCM) {
-			
-			
-		}
-	}
 	
 	public void set_raw_data (int index) {
 		this.raw_data.set(0, this.raw_data.get(0)+1);
