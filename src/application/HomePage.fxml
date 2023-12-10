@@ -44,7 +44,46 @@
                   </Button>
                </children>
             </HBox>
-            <HBox prefHeight="300.0" prefWidth="600.0" />
+            <HBox prefHeight="300.0" prefWidth="600.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="250.0">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </HBox.margin>
+                     <children>
+                        <Label fx:id="label_Q1" text="Is Trump a good President">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <HBox fx:id="hbox_Q1" alignment="TOP_CENTER" prefHeight="27.0" prefWidth="250.0" spacing="20.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#Q1_button" text="Yes" />
+                              <Button mnemonicParsing="false" onAction="#Q1_button" text="No" />
+                           </children>
+                        </HBox>
+                        <Separator prefHeight="11.0" prefWidth="250.0" style="-fx-background-color: #0000;" />
+                        <VBox fx:id="vbox_Q1" alignment="TOP_CENTER" prefHeight="72.0" prefWidth="250.0" visible="false">
+                           <children>
+                              <ProgressBar fx:id="yes_PB_Q1" prefWidth="200.0" progress="0.66" style="-fx-accent: #00FF00;" />
+                              <Label fx:id="yes_label_Q1" text="60%" />
+                              <ProgressBar fx:id="no_PB_Q1" prefWidth="200.0" progress="0.4" style="-fx-accent: #FF0000;" />
+                              <Label fx:id="no_label_Q1" text="40%" />
+                           </children>
+                        </VBox>
+                        <Separator prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="300.0" prefWidth="20.0" />
+                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="250.0">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </VBox>
+               </children></HBox>
          </children>
       </VBox>
    </children>

@@ -9,8 +9,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class HomePageController {
@@ -19,9 +22,25 @@ public class HomePageController {
 	private Scene scene;
 	private Parent root;
 	private Model model;
-	
 	@FXML
 	private Label username_field;
+	@FXML
+	private HBox hbox_Q1;
+	@FXML
+	private VBox vbox_Q1;
+	@FXML
+	private ProgressBar yes_PB_Q1;
+	@FXML
+	private ProgressBar no_PB_Q1;
+	@FXML 
+	private Label yes_label_Q1;
+	@FXML
+	private Label no_label_Q1;
+	@FXML 
+	private Label label_Q1;
+	
+	
+	
 	
 	
 	@FXML
@@ -69,6 +88,36 @@ public class HomePageController {
 		stage.setScene(scene);
 		stage.show();
 		AlertPopUp.afficherAlerte(AlertType.INFORMATION, "Logout Succesfull", "You have been correctly disconnected");
+		
+	}
+	
+	@FXML
+	public void Q1_button(ActionEvent event) throws IOException {
+		model.get_Poll().get(0).set_answered(true);
+		hbox_Q1.setVisible(false);
+		vbox_Q1.setVisible(true);
+		
+	}
+	
+	public boolean check_poll(int i){
+            return(model.get_Poll().get(i-1).get_answered() == true);
+            
+	}
+	
+	public void refresh_Q1() {
+		yes_PB_Q1.setProgress(model.get_Poll().get(0).getValues().get(0));
+		no_PB_Q1.setProgress(model.get_Poll().get(0).getValues().get(1));
+		yes_label_Q1.setText(model.get_Poll().get(0).getValues().get(0)*100+"%");
+		no_label_Q1.setText(model.get_Poll().get(0).getValues().get(1)*100+"%");
+		if(check_poll(1)) {
+			hbox_Q1.setVisible(false);
+			vbox_Q1.setVisible(true);
+		}
+	}
+	
+	public void show_HomePage() {
+		refresh_Q1();
+		System.out.println(model.get_Poll().get(0).get_answered());
 		
 	}
 	

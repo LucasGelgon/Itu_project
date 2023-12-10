@@ -42,10 +42,10 @@ public class ConnectionPageController {
 			root = loader.load();
 			HomePageController controller = loader.getController() ;
 			controller.set_model(model);
-			
 			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			scene = new Scene(root);
 			stage.setScene(scene);
+			controller.show_HomePage();
 			stage.show();
 		}
 		else {

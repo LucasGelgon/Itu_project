@@ -1,0 +1,4 @@
+Is Trump a good President 
+Bool
+0.5
+0.5
