@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -12,14 +13,17 @@
    <children>
       <VBox layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <ImageView fitHeight="78.0" fitWidth="600.0" pickOnBounds="true">
+            <ImageView fitHeight="63.0" fitWidth="600.0" pickOnBounds="true">
                <image>
                   <Image url="@pique_nique.jpg" />
                </image>
             </ImageView>
             <VBox alignment="CENTER" prefHeight="115.0" prefWidth="400.0" style="-fx-background-color: #D9D9D9;">
                <children>
-                  <Label text="Sign In" />
+                  <Label text="Sign In">
+                     <font>
+                        <Font name="Agency FB" size="27.0" />
+                     </font></Label>
                   <TextField fx:id="username_field" prefHeight="25.0" prefWidth="479.0" promptText="Username">
                      <VBox.margin>
                         <Insets left="100.0" right="100.0" top="10.0" />
@@ -34,6 +38,9 @@
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="Agency FB" size="15.0" />
+                     </font>
                   </Button>
                </children>
                <VBox.margin>
@@ -48,7 +55,10 @@
                   <Insets bottom="10.0" left="100.0" right="100.0" top="10.0" />
                </VBox.margin>
                <children>
-                  <Label text="Register" />
+                  <Label text="Register">
+                     <font>
+                        <Font name="Agency FB" size="27.0" />
+                     </font></Label>
                   <TextField fx:id="user_field" promptText="Username">
                      <VBox.margin>
                         <Insets left="100.0" right="100.0" top="10.0" />
@@ -63,6 +73,9 @@
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="Agency FB" size="15.0" />
+                     </font>
                   </Button>
                </children>
             </VBox>

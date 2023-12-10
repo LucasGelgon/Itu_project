@@ -19,7 +19,7 @@
                   <Circle fill="DODGERBLUE" radius="32.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: EB0A0A;" />
                   <Label fx:id="username_field" text="Fred Don">
                      <font>
-                        <Font name="Broadway" size="19.0" />
+                        <Font name="Agency FB" size="30.0" />
                      </font>
                   </Label>
                   <Button mnemonicParsing="false" onAction="#FeedPoll_button" text="FeedPoll">
@@ -55,6 +55,9 @@
                            <padding>
                               <Insets bottom="5.0" />
                            </padding>
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font>
                         </Label>
                         <HBox fx:id="hbox_Q1" alignment="TOP_CENTER" prefHeight="27.0" prefWidth="250.0" spacing="20.0">
                            <children>
@@ -72,7 +75,10 @@
                            </children>
                         </VBox>
                         <Separator prefWidth="200.0" />
-                        <Label fx:id="label_Q2" text="Question 2" />
+                        <Label fx:id="label_Q2" text="Question 2">
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font></Label>
                         <HBox fx:id="hbox_Q2" alignment="TOP_CENTER" prefHeight="27.0" prefWidth="250.0" spacing="20.0">
                            <children>
                               <Button mnemonicParsing="false" onAction="#Q2_button" text="Yes" />
@@ -100,7 +106,10 @@
                         <Insets bottom="10.0" right="20.0" top="10.0" />
                      </HBox.margin>
                      <children>
-                        <Label fx:id="label_Q3" text="Question 3" />
+                        <Label fx:id="label_Q3" text="Question 3">
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font></Label>
                         <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="217.0">
                            <children>
                               <ChoiceBox fx:id="CB_Q3" prefWidth="150.0" />
