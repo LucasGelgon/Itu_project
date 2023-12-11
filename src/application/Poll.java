@@ -28,7 +28,7 @@ public class Poll {
 	 */
 	private ArrayList<Double> raw_data;
 	/**
-	 * Table of choices for the QCM type. Stores the differents choices for the user. 
+	 * Table of choices for the QCM type. Stores the different choices for the user. 
 	 */
 	private String[] choices;
 	/**
