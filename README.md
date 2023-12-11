@@ -19,6 +19,6 @@ access to you polls or stay on the main page to answer some of the poll
 The code is documented by **Javadoc**
 
 ## Authors ##
-Robin Deplanques
-Lucas Gelgon
-Jolan Moreau
+Robin Deplanques <br>
+Lucas Gelgon <br>
+Jolan Moreau <br>
