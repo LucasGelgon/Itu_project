@@ -41,6 +41,7 @@ public class Poll {
 		this.question = question;
 		this.type = type;
 		this.raw_data = new ArrayList<Double>(raw_data);
+		this.values = new ArrayList<Double>();
 		this.refresh_values();
 	}
 	
