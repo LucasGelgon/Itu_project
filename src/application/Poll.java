@@ -37,10 +37,11 @@ public class Poll {
 	 * @param type Type of survey
 	 * @param values  Stores the raw values 
 	 */
-	public Poll(String question, Type type,ArrayList<Double> values) {
+	public Poll(String question, Type type,ArrayList<Double> raw_data) {
 		this.question = question;
 		this.type = type;
-		this.values = new ArrayList<Double>(values);
+		this.raw_data = new ArrayList<Double>(raw_data);
+		this.refresh_values();
 	}
 	
 	/**
