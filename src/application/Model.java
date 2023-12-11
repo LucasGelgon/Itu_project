@@ -66,6 +66,14 @@ public class Model {
 	public ArrayList<Poll> get_Poll(){
 		return poll;
 	}
+	
+	public void add_Poll(Poll poll){
+		this.poll.add(poll);
+		for (ArrayList<Boolean> i : answered) {
+		    i.add(false);
+		}
+		
+	}
 
 	/**
 	 * Constructor of the Model. Initialize the model
@@ -75,12 +83,14 @@ public class Model {
 		user_password.add(new ArrayList<String>());
 		user_password.add(new ArrayList<String>());
 		poll = new ArrayList<Poll>();
-		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question1.txt"));
-		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question2.txt"));
-		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question3.txt"));
-		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question4.txt"));
 		answered = new ArrayList<ArrayList<Boolean>>();
 		add_user("Robin","toto");
+		add_Poll(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question1.txt"));
+		add_Poll(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question2.txt"));
+		add_Poll(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question3.txt"));
+		add_Poll(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question4.txt"));
+		
+		
 		
 		
 		
@@ -118,10 +128,10 @@ public class Model {
     	user_password.get(0).add(user);
 		user_password.get(1).add(password);
 		answered.add(new ArrayList<Boolean>());
-		answered.get(user_password.get(0).indexOf(user)).add(false);
-		answered.get(user_password.get(0).indexOf(user)).add(false);
-		answered.get(user_password.get(0).indexOf(user)).add(false);
-		answered.get(user_password.get(0).indexOf(user)).add(false);
+		for(int i = 0;i<poll.size();i++) {
+			answered.get(user_password.get(0).indexOf(user)).add(false);
+		}
+		
 		
 		return true;
     }
