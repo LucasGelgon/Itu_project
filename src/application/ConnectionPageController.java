@@ -12,7 +12,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * Controller to manage the Connection Page interactions
+ * @author Robin
+ *
+ */
 public class ConnectionPageController {
 
 	private Stage stage;
@@ -29,8 +33,13 @@ public class ConnectionPageController {
 		this.model = model;
 	}
 	
-	@FXML
-	public void Login_button(ActionEvent event) throws IOException {
+	/**
+	 * Log the user when clicking on LogIn. If the user and the passsword are in the database load the next Page (HOMEPAGE),
+	 * if not show an error popup
+	 * @param event
+	 * @throws IOException
+	 */
+	@FXML public void Login_button(ActionEvent event) throws IOException {
 		int index = model.check_user(username_field.getText(), password_field.getText());
 		if (index>=0) {
 			model.setIndexUser(index);
@@ -51,8 +60,13 @@ public class ConnectionPageController {
 		
 	}
 	
-	@FXML
-	public void Register_button(ActionEvent event) throws IOException {
+	/**
+	 * Register a new user when clicking on register with the content of user and password field.
+	 *  Show a popup to inform the user that an account has been created.
+	 * @param event
+	 * @throws IOException
+	 */
+	@FXML public void Register_button(ActionEvent event) throws IOException {
 		
 		boolean info = model.add_user(user_field.getText(), login_field.getText());
 		if (info) {

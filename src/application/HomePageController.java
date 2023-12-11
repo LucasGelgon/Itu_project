@@ -16,7 +16,12 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
+/**
+ * Controller of the Home Page
+ * There's a lot of private attributes to manage the different elements on the fxml page
+ * @author Robin
+ *
+ */
 public class HomePageController {
 	
 	private Stage stage;
@@ -66,11 +71,19 @@ public class HomePageController {
 		username_field.setText(model.getUser());
 		
 	}
-	
+	/**
+	 * Change the Page to the FeedPoll Page
+	 * @param event
+	 * @throws IOException
+	 */
 	public void FeedPoll_button(ActionEvent event) throws IOException {
 		return;
 	}
-	
+	/**
+	 *  Change the Page to the MyPolls page
+	 * @param event
+	 * @throws IOException
+	 */
 	public void MyPolls_button(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("MyPolls.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -79,7 +92,11 @@ public class HomePageController {
 		stage.show();
 		
 	}
-	
+	/**
+	 *  Change the Page to the MyAccount Page
+	 * @param event
+	 * @throws IOException
+	 */
 	public void MyAccount_button(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("AccountPage.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -88,7 +105,11 @@ public class HomePageController {
 		stage.show();
 		
 	}
-	
+	/**
+	 *  Change the Page to the Login Page and show a pop-up with successful disconnection
+	 * @param event
+	 * @throws IOException
+	 */
 	public void Logout_button(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("ConnectionPage.fxml"));
 		root = loader.load();
@@ -102,9 +123,12 @@ public class HomePageController {
 		AlertPopUp.afficherAlerte(AlertType.INFORMATION, "Logout Succesfull", "You have been correctly disconnected");
 		
 	}
-	
-	@FXML
-	public void Q1_button_yes(ActionEvent event) throws IOException {
+	/**
+	 * Event if the user click on the yes button of the first question
+	 * @param event
+	 * @throws IOException
+	 */
+	@FXML public void Q1_button_yes(ActionEvent event) throws IOException {
 		model.setAnswered(model.getIndexUser(), 0, true);
 		model.get_Poll().get(0).set_raw_data(1);
 		refresh_Q1();
@@ -113,8 +137,12 @@ public class HomePageController {
 		
 	}
 	
-	@FXML
-	public void Q1_button_no(ActionEvent event) throws IOException {
+	/**
+	 * Event if the user click on the no button of the first question
+	 * @param event
+	 * @throws IOException
+	 */
+	@FXML public void Q1_button_no(ActionEvent event) throws IOException {
 		model.setAnswered(model.getIndexUser(), 0, true);
 		model.get_Poll().get(0).set_raw_data(2);
 		refresh_Q1();
@@ -122,9 +150,25 @@ public class HomePageController {
 		vbox_Q1.setVisible(true);
 		
 	}
-	
-	@FXML
-	public void Q2_button_yes(ActionEvent event) throws IOException {
+	/**
+	 * Event if the user click on the yes button of the second question
+	 * @param event
+	 * @throws IOException
+	 */
+	@FXML public void Q2_button_yes(ActionEvent event) throws IOException {
+		model.setAnswered(model.getIndexUser(), 1, true);
+		model.get_Poll().get(1).set_raw_data(2);
+		refresh_Q2();
+		hbox_Q2.setVisible(false);
+		vbox_Q2.setVisible(true);
+		
+	}
+	/**
+	 * Event if the user click on the no button of the second question
+	 * @param event
+	 * @throws IOException
+	 */
+	@FXML public void Q2_button_no(ActionEvent event) throws IOException {
 		model.setAnswered(model.getIndexUser(), 1, true);
 		model.get_Poll().get(1).set_raw_data(2);
 		refresh_Q2();
@@ -133,20 +177,14 @@ public class HomePageController {
 		
 	}
 	
-	@FXML
-	public void Q2_button_no(ActionEvent event) throws IOException {
-		model.setAnswered(model.getIndexUser(), 1, true);
-		model.get_Poll().get(1).set_raw_data(2);
-		refresh_Q2();
-		hbox_Q2.setVisible(false);
-		vbox_Q2.setVisible(true);
-		
-	}
 	
-	
-	
-	@FXML
-	public void Q3_button(ActionEvent event) throws IOException {
+	/**
+	 * Event if the user click on the submit button of the third question
+	 * if he selected no choice a warning pop-up is showed otherwise takes in account his answer
+	 * @param event
+	 * @throws IOException
+	 */
+	@FXML public void Q3_button(ActionEvent event) throws IOException {
 		if(CB_Q3.getSelectionModel().getSelectedIndex()<0) {
 			AlertPopUp.afficherAlerte(AlertType.ERROR, "Error", "No answer selected");
 			return;
@@ -158,9 +196,13 @@ public class HomePageController {
 		vbox_Q3.setVisible(true);
 		
 	}
-	
-	@FXML
-	public void Q4_button(ActionEvent event) throws IOException {
+	/**
+	 * Event if the user click on the submit button of the fourth question
+	 * if he selected no choice a warning pop-up is showed otherwise takes in account his answer
+	 * @param event
+	 * @throws IOException
+	 */
+	@FXML public void Q4_button(ActionEvent event) throws IOException {
 		if(CB_Q4.getSelectionModel().getSelectedIndex()<0) {
 			AlertPopUp.afficherAlerte(AlertType.ERROR, "Error", "No answer selected");
 			return;
@@ -173,12 +215,18 @@ public class HomePageController {
 		
 	}
 	
-	
+	/**
+	 * check if the poll i is already answered by the current user
+	 * @param i poll to check
+	 * @return boolean true or false
+	 */
 	public boolean check_poll(int i){
             return((model.getAnswered().get(i-1))== true);
             
 	}
-	
+	/**
+	 * Update the result of the Question 1
+	 */
 	public void refresh_Q1() {
 		label_Q1.setText(model.get_Poll().get(0).getQuestion());
 		yes_PB_Q1.setProgress(model.get_Poll().get(0).getValues().get(0));
@@ -190,7 +238,10 @@ public class HomePageController {
 			vbox_Q1.setVisible(true);
 		}
 	}
-		
+	/**
+	 * Update the result of the Question 2
+	 *
+	 */
 	public void refresh_Q2() {
 			label_Q2.setText(model.get_Poll().get(1).getQuestion());
 			yes_PB_Q2.setProgress(model.get_Poll().get(1).getValues().get(0));
@@ -202,7 +253,9 @@ public class HomePageController {
 				vbox_Q2.setVisible(true);
 			}
 	}
-	
+	/**
+	 * Update the result of the Question 3
+	 */
 	public void refresh_Q3() {
 		CB_Q3.getItems().addAll(model.get_Poll().get(2).get_choices());
 		label_Q3.setText(model.get_Poll().get(2).getQuestion());
@@ -217,7 +270,9 @@ public class HomePageController {
 			vbox_Q3.setVisible(true);
 		}
 	}
-		
+	/**
+	 * Update the result of the Question 4
+	 */
 	public void refresh_Q4() {
 		CB_Q4.getItems().addAll(model.get_Poll().get(3).get_choices());
 		label_Q4.setText(model.get_Poll().get(3).getQuestion());
@@ -233,7 +288,9 @@ public class HomePageController {
 		}
 		
 	}
-	
+	/**
+	 * Function to show the correct and up in time result to the user. Should be use each time the HomePage is show-up or refresh
+	 */
 	public void show_HomePage() {
 		refresh_Q1();
 		refresh_Q2();
