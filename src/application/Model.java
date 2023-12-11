@@ -76,6 +76,8 @@ public class Model {
 		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question1.txt"));
 		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question2.txt"));
 		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question3.txt"));
+		poll.add(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question4.txt"));
+		answered.get(user_password.get(0).indexOf(user)).add(false);
 		answered.get(user_password.get(0).indexOf(user)).add(false);
 		answered.get(user_password.get(0).indexOf(user)).add(false);
 		answered.get(user_password.get(0).indexOf(user)).add(false);

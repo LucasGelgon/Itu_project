@@ -8,20 +8,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2D0517;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.WelcomePageController">
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" spacing="60.0" style="-fx-background-color: #2D0517;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.WelcomePageController">
    <children>
-      <Button layoutX="225.0" layoutY="170.0" mnemonicParsing="false" onAction="#Start_button" style="-fx-background-color: #04D632;" text="Let's Start">
-         <font>
-            <Font name="Agency FB" size="32.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Label layoutX="190.0" layoutY="62.0" text="Pique-Nique" textFill="WHITE">
+      <Label text="Pique-Nique" textFill="WHITE">
          <font>
             <Font name="Agency FB" size="59.0" />
          </font>
       </Label>
+      <Button mnemonicParsing="false" onAction="#Start_button" style="-fx-background-color: #04D632;" text="Let's Start">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Agency FB" size="32.0" />
+         </font>
+      </Button>
    </children>
-</AnchorPane>
+</VBox>

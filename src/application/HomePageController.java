@@ -49,6 +49,16 @@ public class HomePageController {
 	@FXML private Label label1_Q3;
 	@FXML private Label label2_Q3;
 	@FXML private Label label3_Q3;
+	@FXML private HBox hbox_Q4;
+	@FXML private VBox vbox_Q4;
+	@FXML private Label label_Q4;
+	@FXML private ChoiceBox<String> CB_Q4;
+	@FXML private ProgressBar PB1_Q4;
+	@FXML private ProgressBar PB2_Q4;
+	@FXML private ProgressBar PB3_Q4;
+	@FXML private Label label1_Q4;
+	@FXML private Label label2_Q4;
+	@FXML private Label label3_Q4;
 	
 	
 	public void set_model(Model model) {
@@ -149,6 +159,20 @@ public class HomePageController {
 		
 	}
 	
+	@FXML
+	public void Q4_button(ActionEvent event) throws IOException {
+		if(CB_Q4.getSelectionModel().getSelectedIndex()<0) {
+			AlertPopUp.afficherAlerte(AlertType.ERROR, "Error", "No answer selected");
+			return;
+		}
+		model.setAnswered(model.getIndexUser(), 3, true);
+		model.get_Poll().get(3).set_raw_data(CB_Q4.getSelectionModel().getSelectedIndex()+1);
+		refresh_Q4();
+		hbox_Q4.setVisible(false);
+		vbox_Q4.setVisible(true);
+		
+	}
+	
 	
 	public boolean check_poll(int i){
             return((model.getAnswered().get(i-1))== true);
@@ -192,7 +216,21 @@ public class HomePageController {
 			hbox_Q3.setVisible(false);
 			vbox_Q3.setVisible(true);
 		}
+	}
 		
+	public void refresh_Q4() {
+		CB_Q4.getItems().addAll(model.get_Poll().get(3).get_choices());
+		label_Q4.setText(model.get_Poll().get(3).getQuestion());
+		label1_Q4.setText(model.get_Poll().get(3).get_choices()[0]+" "+df.format(model.get_Poll().get(3).getValues().get(0)*100)+"%");
+		label2_Q4.setText(model.get_Poll().get(3).get_choices()[1]+" "+df.format(model.get_Poll().get(3).getValues().get(1)*100)+"%");
+		label3_Q4.setText(model.get_Poll().get(3).get_choices()[2]+" "+df.format(model.get_Poll().get(3).getValues().get(2)*100)+"%");
+		PB1_Q4.setProgress(model.get_Poll().get(3).getValues().get(0));
+		PB2_Q4.setProgress(model.get_Poll().get(3).getValues().get(1));
+		PB3_Q4.setProgress(model.get_Poll().get(3).getValues().get(2));
+		if(check_poll(4)) {
+			hbox_Q4.setVisible(false);
+			vbox_Q4.setVisible(true);
+		}
 		
 	}
 	
@@ -200,6 +238,7 @@ public class HomePageController {
 		refresh_Q1();
 		refresh_Q2();
 		refresh_Q3();
+		refresh_Q4();
 		
 	}
 	
