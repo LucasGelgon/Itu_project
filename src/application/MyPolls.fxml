@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.shape.*?>
@@ -8,8 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyPollsController">
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #04D632;">
          <children>
@@ -41,21 +41,205 @@
             </Button>
          </children>
       </HBox>
-      <TabPane prefHeight="297.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="350.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab closable="false" text="My Polls">
                <content>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #2D0517;">
                      <children>
-                        <Button mnemonicParsing="false" text="Button" />
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" text="Add a poll" />
+                        <HBox alignment="CENTER" prefHeight="369.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #2D0517;">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="271.0" prefWidth="250.0" style="-fx-background-color: #CCCCCC;">
+                                 <children>
+                                    <Label fx:id="label_Q11" text="Question 1">
+                                       <font>
+                                          <Font name="Agency FB" size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <Separator prefHeight="11.0" prefWidth="250.0" style="-fx-background-color: #0000;" />
+                                    <VBox fx:id="vbox_Q11" alignment="TOP_CENTER" prefHeight="72.0" prefWidth="250.0" visible="false">
+                                       <children>
+                                          <ProgressBar fx:id="yes_PB_Q11" prefWidth="200.0" progress="0.66" style="-fx-accent: #00FF00;" />
+                                          <Label fx:id="yes_label_Q11" text="60%" />
+                                          <ProgressBar fx:id="no_PB_Q11" prefWidth="200.0" progress="0.4" style="-fx-accent: #FF0000;" />
+                                          <Label fx:id="no_label_Q11" text="40%" />
+                                       </children>
+                                    </VBox>
+                                    <Separator prefWidth="200.0" />
+                                    <Label fx:id="label_Q21" text="Question 2">
+                                       <font>
+                                          <Font name="Agency FB" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefHeight="11.0" prefWidth="250.0" style="-fx-background-color: #0000;" />
+                                    <VBox fx:id="vbox_Q21" alignment="TOP_CENTER" prefHeight="72.0" prefWidth="250.0" visible="false">
+                                       <children>
+                                          <ProgressBar fx:id="yes_PB_Q21" prefWidth="200.0" progress="0.66" style="-fx-accent: #00FF00;" />
+                                          <Label fx:id="yes_label_Q21" text="60%" />
+                                          <ProgressBar fx:id="no_PB_Q21" prefWidth="200.0" progress="0.4" style="-fx-accent: #FF0000;" />
+                                          <Label fx:id="no_label_Q21" text="40%" />
+                                       </children>
+                                    </VBox>
+                                    <Separator prefWidth="200.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="300.0" prefWidth="0.0" style="-fx-background-color: #0000;" />
+                              <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: #CCCCCC;">
+                                 <children>
+                                    <Label fx:id="label_Q31" text="Question 3">
+                                       <font>
+                                          <Font name="Agency FB" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" />
+                                    <VBox fx:id="vbox_Q31" alignment="TOP_CENTER" prefHeight="108.0" prefWidth="217.0" visible="false">
+                                       <children>
+                                          <ProgressBar fx:id="PB1_Q31" prefWidth="200.0" progress="0.0" />
+                                          <Label fx:id="label1_Q31" text="Label" />
+                                          <ProgressBar fx:id="PB2_Q31" prefWidth="200.0" progress="0.0" />
+                                          <Label fx:id="label2_Q31" text="Label" />
+                                          <ProgressBar fx:id="PB3_Q31" prefWidth="200.0" progress="0.0" />
+                                          <Label fx:id="label3_Q31" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <Separator prefWidth="200.0" />
+                                    <Label fx:id="label_Q41" text="Question 4">
+                                       <font>
+                                          <Font name="Agency FB" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" />
+                                    <VBox fx:id="vbox_Q41" alignment="TOP_CENTER" prefHeight="108.0" prefWidth="217.0" visible="false">
+                                       <children>
+                                          <ProgressBar fx:id="PB1_Q41" prefWidth="200.0" progress="0.0" />
+                                          <Label fx:id="label1_Q41" text="Label" />
+                                          <ProgressBar fx:id="PB2_Q41" prefWidth="200.0" progress="0.0" />
+                                          <Label fx:id="label2_Q41" text="Label" />
+                                          <ProgressBar fx:id="PB3_Q41" prefWidth="200.0" progress="0.0" />
+                                          <Label fx:id="label3_Q41" text="Label" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
                      </children>
+                     <padding>
+                        <Insets top="2.0" />
+                     </padding>
                   </VBox>
                </content>
           </Tab>
           <Tab closable="false" text="Answered Polls">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
+               <content>
+                  <HBox alignment="CENTER" prefHeight="369.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #2D0517;">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: #CCCCCC;">
+                           <children>
+                              <Label fx:id="label_Q1" text="Question 1">
+                                 <font>
+                                    <Font name="Agency FB" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="5.0" />
+                                 </padding>
+                              </Label>
+                              <Separator prefHeight="11.0" prefWidth="250.0" style="-fx-background-color: #0000;" />
+                              <VBox fx:id="vbox_Q1" alignment="TOP_CENTER" prefHeight="72.0" prefWidth="250.0" visible="false">
+                                 <children>
+                                    <ProgressBar fx:id="yes_PB_Q1" prefWidth="200.0" progress="0.66" style="-fx-accent: #00FF00;" />
+                                    <Label fx:id="yes_label_Q1" text="60%" />
+                                    <ProgressBar fx:id="no_PB_Q1" prefWidth="200.0" progress="0.4" style="-fx-accent: #FF0000;" />
+                                    <Label fx:id="no_label_Q1" text="40%" />
+                                 </children>
+                              </VBox>
+                              <Separator prefWidth="200.0" />
+                              <Label fx:id="label_Q2" text="Question 2">
+                                 <font>
+                                    <Font name="Agency FB" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefHeight="11.0" prefWidth="250.0" style="-fx-background-color: #0000;" />
+                              <VBox fx:id="vbox_Q2" alignment="TOP_CENTER" prefHeight="72.0" prefWidth="250.0" visible="false">
+                                 <children>
+                                    <ProgressBar fx:id="yes_PB_Q2" prefWidth="200.0" progress="0.66" style="-fx-accent: #00FF00;" />
+                                    <Label fx:id="yes_label_Q2" text="60%" />
+                                    <ProgressBar fx:id="no_PB_Q2" prefWidth="200.0" progress="0.4" style="-fx-accent: #FF0000;" />
+                                    <Label fx:id="no_label_Q2" text="40%" />
+                                 </children>
+                              </VBox>
+                              <Separator prefWidth="200.0" />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="300.0" prefWidth="0.0" style="-fx-background-color: #0000;" />
+                        <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: #CCCCCC;">
+                           <children>
+                              <Label fx:id="label_Q3" text="Question 3">
+                                 <font>
+                                    <Font name="Agency FB" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" />
+                              <VBox fx:id="vbox_Q3" alignment="TOP_CENTER" prefHeight="108.0" prefWidth="217.0" visible="false">
+                                 <children>
+                                    <ProgressBar fx:id="PB1_Q3" prefWidth="200.0" progress="0.0" />
+                                    <Label fx:id="label1_Q3" text="Label" />
+                                    <ProgressBar fx:id="PB2_Q3" prefWidth="200.0" progress="0.0" />
+                                    <Label fx:id="label2_Q3" text="Label" />
+                                    <ProgressBar fx:id="PB3_Q3" prefWidth="200.0" progress="0.0" />
+                                    <Label fx:id="label3_Q3" text="Label" />
+                                 </children>
+                              </VBox>
+                              <Separator prefWidth="200.0" />
+                              <Label fx:id="label_Q4" text="Question 4">
+                                 <font>
+                                    <Font name="Agency FB" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" />
+                              <VBox fx:id="vbox_Q4" alignment="TOP_CENTER" prefHeight="108.0" prefWidth="217.0" visible="false">
+                                 <children>
+                                    <ProgressBar fx:id="PB1_Q4" prefWidth="200.0" progress="0.0" />
+                                    <Label fx:id="label1_Q4" text="Label" />
+                                    <ProgressBar fx:id="PB2_Q4" prefWidth="200.0" progress="0.0" />
+                                    <Label fx:id="label2_Q4" text="Label" />
+                                    <ProgressBar fx:id="PB3_Q4" prefWidth="200.0" progress="0.0" />
+                                    <Label fx:id="label3_Q4" text="Label" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
           </Tab>
         </tabs>
       </TabPane>

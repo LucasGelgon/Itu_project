@@ -85,7 +85,11 @@ public class HomePageController {
 	 * @throws IOException
 	 */
 	public void MyPolls_button(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("MyPolls.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("MyPolls.fxml"));
+		root = loader.load();
+		MyPollsController controller = loader.getController() ;
+		controller.set_model(model);
+		
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
