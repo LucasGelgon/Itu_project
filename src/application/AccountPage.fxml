@@ -1,8 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
-
+<VBox prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #2D0517;;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomePageController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #04D632;">
+         <children>
+            <Circle fill="DODGERBLUE" radius="32.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: EB0A0A;" />
+            <Label fx:id="username_field" text="Fred Don">
+               <font>
+                  <Font name="Agency FB" size="30.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#FeedPoll_button" text="FeedPoll">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#MyPolls_button" text="My Polls">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#MyAccount_button" text="My account">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#Logout_button" text="Logout">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="353.0" prefWidth="600.0" spacing="20.0">
+         <!-- Add the My Account label and account information here -->
+         <VBox alignment="CENTER">
+            <Label text="My Account" style="-fx-text-fill: white;">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <!-- Add your account information labels or nodes here -->
+            <!-- Example: -->
+            <Label text="Name : " style="-fx-text-fill: white;" />
+            <Label text="Surname : " style="-fx-text-fill: white;" />
+            <!-- Add more account information labels as needed -->
+         </VBox>
+      </HBox>
+   </children>
+</VBox>
