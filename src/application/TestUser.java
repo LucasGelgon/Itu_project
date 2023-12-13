@@ -1,5 +1,5 @@
-import aplication.User;
-
+import application.User;
+import java.util.*;
 
 /**
  * test user.java
@@ -23,12 +23,12 @@ public class TestUser{
 	public void testCreateUser(){
 		
 		System.out.println("*** testCreateUser()");
-		User user1 = new User("Lucas", "Gelgon", 18, "example@gmail.com", [true, false, true]);
+		User user1 = new User("Lucas", "Gelgon", 18, "example@gmail.com", new boolean[]{true, false, true});
 		System.out.println(user1.getName());
 		System.out.println(user1.getSurname());
 		System.out.println(user1.getAge());
 		System.out.println(user1.getEmail());
-		System.out.println(user1.getBadges());
+		System.out.println(Arrays.toString(user1.getBadges()));
 		
 	}
 }
@@ -39,4 +39,3 @@ public class TestUser{
 		
 		
 
-}
