@@ -50,9 +50,9 @@
                         <Button mnemonicParsing="false" onAction="#addPoll_button" prefHeight="25.0" prefWidth="205.0" text="Add a poll" />
                         <HBox alignment="CENTER" prefHeight="369.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #2D0517;">
                            <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="271.0" prefWidth="250.0" style="-fx-background-color: #CCCCCC;" visible="false">
+                              <VBox alignment="TOP_CENTER" prefHeight="271.0" prefWidth="250.0" style="-fx-background-color: #CCCCCC;">
                                  <children>
-                                    <Label text="Question 1">
+                                    <Label text="Question 1" visible="false">
                                        <font>
                                           <Font name="Agency FB" size="18.0" />
                                        </font>
@@ -70,7 +70,7 @@
                                        </children>
                                     </VBox>
                                     <Separator prefWidth="200.0" />
-                                    <Label text="Question 2">
+                                    <Label text="Question 2" visible="false">
                                        <font>
                                           <Font name="Agency FB" size="18.0" />
                                        </font>
@@ -94,9 +94,9 @@
                                  </HBox.margin>
                               </VBox>
                               <Separator orientation="VERTICAL" prefHeight="300.0" prefWidth="0.0" style="-fx-background-color: #0000;" />
-                              <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: #CCCCCC;" visible="false">
+                              <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: #CCCCCC;">
                                  <children>
-                                    <Label text="Question 3">
+                                    <Label text="Question 3" visible="false">
                                        <font>
                                           <Font name="Agency FB" size="18.0" />
                                        </font>
@@ -113,7 +113,7 @@
                                        </children>
                                     </VBox>
                                     <Separator prefWidth="200.0" />
-                                    <Label text="Question 4">
+                                    <Label text="Question 4" visible="false">
                                        <font>
                                           <Font name="Agency FB" size="18.0" />
                                        </font>

@@ -9,7 +9,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Alert.AlertType;
@@ -128,7 +127,11 @@ public class MyPollsController {
 		AlertPopUp.afficherAlerte(AlertType.INFORMATION, "Logout Succesfull", "You have been correctly disconnected");
 		
 	}
-	
+	/**
+	 * Change the page to the Add Poll Page
+	 * @param event
+	 * @throws IOException
+	 */
 	public void addPoll_button (ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("PollCreation.fxml"));
 		root = loader.load();
@@ -151,9 +154,9 @@ public class MyPollsController {
 	}
 	
 	/**
-	 * Update the result of the Question 1
+	 * Update the view of the slot 1
 	 */
-	public void refresh_Q1() {
+	public void refresh_slot1() {
 		if(check_poll(1)) {
 			label_Q1.setText(model.get_Poll().get(0).getQuestion());
 			yes_PB_Q1.setProgress(model.get_Poll().get(0).getValues().get(0));
@@ -167,10 +170,10 @@ public class MyPollsController {
 
 	}
 	/**
-	 * Update the result of the Question 2
+	 * Update the view of the slot 2
 	 *
 	 */
-	public void refresh_Q2() {
+	public void refresh_slot2() {
 		if(check_poll(2)) {
 			label_Q2.setText(model.get_Poll().get(1).getQuestion());
 			yes_PB_Q2.setProgress(model.get_Poll().get(1).getValues().get(0));
@@ -183,10 +186,10 @@ public class MyPollsController {
 
 	}
 	/**
-	 * Update the result of the Question 3
+	 * Update the view of the slot 3
 	 */
 	
-	public void refresh_Q3() {
+	public void refresh_slot3() {
 		if(check_poll(3)) {
 			label_Q3.setText(model.get_Poll().get(2).getQuestion());
 			label1_Q3.setText(model.get_Poll().get(2).get_choices()[0]+" "+df.format(model.get_Poll().get(2).getValues().get(0)*100)+"%");
@@ -201,10 +204,10 @@ public class MyPollsController {
 	}
 	
 	/**
-	 * Update the result of the Question 4
+	 * Update the view of the slot 4
 	 */
 	
-	public void refresh_Q4() {
+	public void refresh_slot4() {
 		if(check_poll(4)) {
 			label_Q4.setText(model.get_Poll().get(3).getQuestion());
 			label1_Q4.setText(model.get_Poll().get(3).get_choices()[0]+" "+df.format(model.get_Poll().get(3).getValues().get(0)*100)+"%");
@@ -220,13 +223,13 @@ public class MyPollsController {
 	}
 	
 	/**
-	 * Function to show the correct and up in time result to the user. Should be use each time the HomePage is show-up or refresh
+	 * Function to show the correct and up in time result to the user. Should be use each time the Answered page is show-up or refresh
 	 */
 	public void show_MyPollsAnswered() {
-		refresh_Q1();
-		refresh_Q2();
-		refresh_Q3();
-		refresh_Q4();
+		refresh_slot1();
+		refresh_slot2();
+		refresh_slot3();
+		refresh_slot4();
 		
 	}
 	
