@@ -41,21 +41,40 @@
                </cursor>
             </Button>
          </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="353.0" prefWidth="600.0" spacing="20.0">
-         <!-- Add the My Account label and account information here -->
-         <VBox alignment="CENTER">
-            <Label text="My Account" style="-fx-text-fill: white;">
-               <font>
-                  <Font name="Arial" size="18.0" />
-               </font>
-            </Label>
-            <!-- Add your account information labels or nodes here -->
-            <!-- Example: -->
-            <Label text="Name : " style="-fx-text-fill: white;" />
-            <Label text="Surname : " style="-fx-text-fill: white;" />
-            <!-- Add more account information labels as needed -->
+         <HBox alignment="CENTER" prefHeight="353.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #37474F;">
+         <!-- Container for My Account information -->
+         <VBox alignment="CENTER" spacing="10">
+            <!-- My Account label -->
+            <Label text="My Account" style="-fx-text-fill: #FFFFFF; -fx-font-family: 'Arial'; -fx-font-size: 24.0;" />
+
+            <!-- Account information labels with FXML ids -->
+            <HBox>
+               <Label text="Name: " style="-fx-text-fill: #FFFFFF;" />
+               <Label fx:id="nameLabel" style="-fx-text-fill: #B0BEC5;" />
+            </HBox>
+
+            <HBox>
+               <Label text="Surname: " style="-fx-text-fill: #FFFFFF;" />
+               <Label fx:id="surnameLabel" style="-fx-text-fill: #B0BEC5;" />
+            </HBox>
+            
+             <HBox>
+               <Label text="Age: " style="-fx-text-fill: #FFFFFF;" />
+               <Label fx:id="ageLabel" style="-fx-text-fill: #B0BEC5;" />
+            </HBox>
+            
+             <HBox>
+               <Label text="Email: " style="-fx-text-fill: #FFFFFF;" />
+               <Label fx:id="surnameLabel" style="-fx-text-fill: #B0BEC5;" />
+            </HBox>
+            
+             <HBox>
+               <Label text="Badges: " style="-fx-text-fill: #FFFFFF;" />
+               <Label fx:id="badgesLabel" style="-fx-text-fill: #B0BEC5;" />
+            </HBox>
+
          </VBox>
       </HBox>
+      
    </children>
 </VBox>
