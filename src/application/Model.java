@@ -41,7 +41,9 @@ public class Model {
 	public ArrayList<Boolean> getAnswered() {
 		return answered.get(index_user);
 	}
-	
+	public void set_user_userpassword(String user) {
+		user_password.get(0).set(index_user, user);
+	}
 	/**
 	 * Get only the User class of the current user and not the array of all the users.
 	 * @return Boolean Array of the current user

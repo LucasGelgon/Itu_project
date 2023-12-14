@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -16,22 +19,22 @@
                         <Font name="Agency FB" size="30.0" />
                     </font>
                 </Label>
-                <Button  mnemonicParsing="false" onAction="#FeedPoll_button" text="FeedPoll">
+                <Button mnemonicParsing="false" onAction="#FeedPoll_button" text="FeedPoll">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button  mnemonicParsing="false" onAction="#MyPolls_button" text="My Polls">
+                <Button mnemonicParsing="false" onAction="#MyPolls_button" text="My Polls">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button  mnemonicParsing="false" onAction="#MyAccount_button" text="My account">
+                <Button mnemonicParsing="false" onAction="#MyAccount_button" text="My account">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button  mnemonicParsing="false" onAction="#Logout_button" text="Logout">
+                <Button mnemonicParsing="false" onAction="#Logout_button" text="Logout">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
@@ -40,14 +43,44 @@
         </HBox>
 
         <HBox alignment="CENTER">
-            <VBox alignment="CENTER" spacing="27" style="-fx-background-color: #2D0517; -fx-padding: 20; -fx-border-color: #2D0517; -fx-border-radius: 5; -fx-background-radius: 5;">
-                <Label  text="My Account" style="-fx-text-fill: #FFFFFF; -fx-font-family: 'Arial'; -fx-font-size: 24.0; -fx-font-weight: bold; -fx-alignment: CENTER; -fx-padding: 10;" />
-                <Label fx:id="nameLabel" text="Name: Fred" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-alignment: CENTER;" />
-                <Label fx:id="surnameLabel" text="Surname: Johnson" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-alignment: CENTER;" />
-                <Label fx:id="ageLabel" text="Age: 30" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-alignment: CENTER;" />
-                <Label fx:id="emailLabel" text="Email: fred@example.com" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-alignment: CENTER;" />
-                <Label fx:id="badgesLabel" text="Badges: [True, False, True]" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-alignment: CENTER;" />
-            </VBox>
-        </HBox>
+   <children>
+   			<VBox alignment="CENTER" spacing="27" style="-fx-background-color: #2D0517; -fx-padding: 20; -fx-border-color: #2D0517; -fx-border-radius: 5; -fx-background-radius: 5;">
+      <children>
+      				<Label style="-fx-text-fill: #FFFFFF; -fx-font-family: 'Arial'; -fx-font-size: 24.0; -fx-font-weight: bold; -fx-alignment: CENTER; -fx-padding: 10;" text="My Account" />
+      
+      				<HBox spacing="10">
+         <children>
+         					<Label fx:id="nameLabel" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px;" text="Name:" />
+         					<TextField fx:id="nameTextField" onAction="#updateUserDetails" promptText="Enter your name" />
+         </children>
+      				</HBox>
+      				<HBox spacing="10">
+         <children>
+         					<Label fx:id="surnameLabel" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px;" text="Surname:" />
+         					<TextField fx:id="surnameTextField" onAction="#updateUserDetails" promptText="Enter your surname" />
+         </children>
+      				</HBox>
+      				<HBox spacing="10">
+         <children>
+         					<Label fx:id="ageLabel" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px;" text="Age:" />
+         					<TextField fx:id="ageTextField" onAction="#updateUserDetails" promptText="Enter your age" />
+         </children>
+      				</HBox>
+      				<HBox spacing="10">
+         <children>
+         					<Label fx:id="emailLabel" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px;" text="Email:" />
+         					<TextField fx:id="emailTextField" onAction="#updateUserDetails" promptText="Enter your email" />
+         </children>
+      				</HBox>
+      				<HBox spacing="10">
+         <children>
+         				<Label fx:id="badgesLabel" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px;" text="Badges:" />
+         </children>
+      				</HBox>
+      </children>
+   			</VBox>
+   </children>
+		</HBox>
+
     </children>
 </VBox>

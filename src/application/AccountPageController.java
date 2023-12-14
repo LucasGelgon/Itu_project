@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -24,6 +25,10 @@ public class AccountPageController {
     @FXML private Label emailLabel;
     @FXML private Label badgesLabel;
     @FXML private Label username_field;
+    @FXML private TextField nameTextField;
+    @FXML private TextField surnameTextField;
+    @FXML private TextField ageTextField;
+    @FXML private TextField emailTextField;
     
      
 
@@ -32,7 +37,7 @@ public class AccountPageController {
      */
     public void refresh_AccountPage() {
         User user = model.getUserInfo();
-
+        username_field.setText(model.getUser());
         nameLabel.setText("Name: " + user.getName());
         surnameLabel.setText("Surname: " + user.getSurname());
         ageLabel.setText("Age: " + user.getAge());
@@ -120,4 +125,23 @@ public class AccountPageController {
 		AlertPopUp.afficherAlerte(AlertType.INFORMATION, "Logout Succesfull", "You have been correctly disconnected");
 		
 	}
+
+    // Méthode appelée lorsque les données sont modifiées
+    
+    @FXML
+    private void updateUserDetails() {
+        try {
+            model.getUserInfo().setName(nameTextField.getText());
+            model.setUser(model.getUserInfo().getName());
+            model.set_user_userpassword(model.getUserInfo().getName());
+            model.getUserInfo().setSurname(surnameTextField.getText());
+            model.getUserInfo().setAge(Integer.parseInt(ageTextField.getText())); // Handle NumberFormatException
+            model.getUserInfo().setEmail(emailTextField.getText());
+        } catch (NumberFormatException e) {
+            // Handle the exception, maybe set a default age or show an error message
+        }
+        refresh_AccountPage();
+    }
+    
+    
 }
