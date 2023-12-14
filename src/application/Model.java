@@ -30,7 +30,7 @@ public class Model {
 	 */
 	private ArrayList<Poll> poll;
 	/**
-	 * 
+	 * List of all the users with their informations
 	 */
 	private ArrayList<User> userList;
 	
@@ -58,7 +58,10 @@ public class Model {
 	public void setAnswered(int index,int poll_index,boolean value) {
 		this.answered.get(index).set(poll_index, value); 
 	}
-	
+	/**
+	 * set the index of the current user
+	 * @param index index of the user
+	 */
 	public void setIndexUser(int index) {
 		this.index_user = index;
 	}
@@ -78,7 +81,10 @@ public class Model {
 	public ArrayList<Poll> get_Poll(){
 		return poll;
 	}
-	
+	/**
+	 * add a Poll to the list of poll
+	 * @param poll the poll to add
+	 */
 	public void add_Poll(Poll poll){
 		this.poll.add(poll);
 		for (ArrayList<Boolean> i : answered) {
@@ -88,7 +94,7 @@ public class Model {
 	}
 
 	/**
-	 * Constructor of the Model. Initialize the model
+	 * Constructor of the Model. Initialize the model with some values
 	 */
 	public Model () {
 		user_password = new ArrayList<ArrayList<String>>();
