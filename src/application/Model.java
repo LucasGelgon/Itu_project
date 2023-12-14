@@ -29,6 +29,10 @@ public class Model {
 	 * List of all the created poll
 	 */
 	private ArrayList<Poll> poll;
+	/**
+	 * 
+	 */
+	private ArrayList<User> userList;
 	
 	/**
 	 * Get only the Boolean Array of the current user and not the array of boolean array.
@@ -36,6 +40,14 @@ public class Model {
 	 */
 	public ArrayList<Boolean> getAnswered() {
 		return answered.get(index_user);
+	}
+	
+	/**
+	 * Get only the User class of the current user and not the array of all the users.
+	 * @return Boolean Array of the current user
+	 */
+	public User getUserInfo() {
+		return userList.get(index_user);
 	}
 	/**
 	 * Allow to change if the user answered to a question or not
@@ -83,6 +95,7 @@ public class Model {
 		user_password.add(new ArrayList<String>());
 		user_password.add(new ArrayList<String>());
 		poll = new ArrayList<Poll>();
+		userList = new ArrayList<User>();
 		answered = new ArrayList<ArrayList<Boolean>>();
 		add_user("Robin","toto");
 		add_Poll(this.get_info("C:\\Users\\Robin\\Desktop\\Cours 2A\\Workspace\\Itue_project\\src\\application\\Poll_Question1.txt"));
@@ -128,6 +141,7 @@ public class Model {
     	user_password.get(0).add(user);
 		user_password.get(1).add(password);
 		answered.add(new ArrayList<Boolean>());
+		userList.add(new User(user));
 		for(int i = 0;i<poll.size();i++) {
 			answered.get(user_password.get(0).indexOf(user)).add(false);
 		}

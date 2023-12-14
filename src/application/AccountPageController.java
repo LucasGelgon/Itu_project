@@ -1,33 +1,37 @@
 package application;
 
+import java.io.IOException;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class AccountPageController {
 
-    @FXML
-    private Label nameLabel;
-
-    @FXML
-    private Label surnameLabel;
-
-    @FXML
-    private Label ageLabel;
-
-    @FXML
-    private Label emailLabel;
-
-    @FXML
-    private Label badgesLabel;
-
-    private Model model; 
+	private Stage stage;
+	private Scene scene;
+	private Parent root;
+	private Model model;
+    @FXML private Label nameLabel;
+    @FXML private Label surnameLabel;
+    @FXML private Label ageLabel;
+    @FXML private Label emailLabel;
+    @FXML private Label badgesLabel;
+    @FXML private Label username_field;
+    
+     
 
     /**
      * Initialize the controller
      */
-    @FXML
-    public void initialize() {
-        User user = model.getUser();
+    public void refresh_AccountPage() {
+        User user = model.getUserInfo();
 
         nameLabel.setText("Name: " + user.getName());
         surnameLabel.setText("Surname: " + user.getSurname());
@@ -59,6 +63,16 @@ public class AccountPageController {
 	 * @throws IOException
 	 */
 	public void FeedPoll_button(ActionEvent event) throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
+		root = loader.load();
+		HomePageController controller = loader.getController() ;
+		controller.set_model(model);
+		
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		controller.show_HomePage();
+		stage.setScene(scene);
+		stage.show();
 		return;
 	}
 	/**

@@ -102,9 +102,14 @@ public class MyPollsController {
 	 * @throws IOException
 	 */
 	public void MyAccount_button(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("AccountPage.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("AccountPage.fxml"));
+		root = loader.load();
+		AccountPageController controller = loader.getController() ;
+		controller.set_model(model);
+		
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
+		controller.refresh_AccountPage();
 		stage.setScene(scene);
 		stage.show();
 		

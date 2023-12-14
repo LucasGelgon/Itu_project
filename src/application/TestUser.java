@@ -1,4 +1,5 @@
-import application.User;
+package application;
+
 import java.util.*;
 
 /**
@@ -23,7 +24,7 @@ public class TestUser{
 	public void testCreateUser(){
 		
 		System.out.println("*** testCreateUser()");
-		User user1 = new User("Lucas", "Gelgon", 18, "example@gmail.com", new boolean[]{true, false, true});
+		User user1 = new User("Lucas", "Gelgon", 18, "example@gmail.com");
 		System.out.println(user1.getName());
 		System.out.println(user1.getSurname());
 		System.out.println(user1.getAge());

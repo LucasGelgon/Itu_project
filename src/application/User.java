@@ -6,20 +6,24 @@ package application;
 public class User {
 
     private String name;
-    private String surname;
-    private int age;
-    private String email;
-    private boolean[] badges;
-
+    private String surname = "";
+    private int age ;
+    private String email = "";
+    private boolean[] badges = {false,false,false};
+    
+    
+    public User(String name) {
+    	this.name = name;
+    	
+    }
     /**
      * Creates a user
      */
-    public User(String theName, String theSurname, int theAge, String theEmail, boolean[] theBadges) {
-        this.setName(theName);
-        this.setSurname(theSurname);
-        this.setAge(theAge);
-        this.setEmail(theEmail);
-        this.setBadges(theBadges);
+    public User(String theName, String theSurname , int theAge , String theEmail) {
+        this.name = theName;
+        this.surname = theSurname;
+        this.age = theAge;
+        this.email =theEmail;
     }
 
     /**
