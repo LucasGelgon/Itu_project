@@ -1,80 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.chart.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.Cursor?>
 
-<VBox prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #2D0517;;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomePageController">
-   <children>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #04D632;">
-         <children>
-            <Circle fill="DODGERBLUE" radius="32.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: EB0A0A;" />
-            <Label fx:id="username_field" text="Fred Don">
-               <font>
-                  <Font name="Agency FB" size="30.0" />
-               </font>
-            </Label>
-            <Button mnemonicParsing="false" onAction="#FeedPoll_button" text="FeedPoll">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#MyPolls_button" text="My Polls">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#MyAccount_button" text="My account">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#Logout_button" text="Logout">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-         <HBox alignment="CENTER" prefHeight="353.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #37474F;">
-         <!-- Container for My Account information -->
-         <VBox alignment="CENTER" spacing="10">
-            <!-- My Account label -->
-            <Label text="My Account" style="-fx-text-fill: #FFFFFF; -fx-font-family: 'Arial'; -fx-font-size: 24.0;" />
+<VBox prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #2D0517" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccountPageController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: #04D632;">
+            <!-- Contenu de la barre verte inchangé -->
+            <children>
+                <Circle fill="DODGERBLUE" radius="32.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #EB0A0A;" />
+                <Label fx:id="usernameField" text="Fred Don">
+                    <font>
+                        <Font name="Agency FB" size="30.0" />
+                    </font>
+                </Label>
+                <Button fx:id="feedPollButton" mnemonicParsing="false" onAction="#FeedPoll_button" text="FeedPoll">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="myPollsButton" mnemonicParsing="false" onAction="#MyPolls_button" text="My Polls">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="myAccountButton" mnemonicParsing="false" onAction="#MyAccount_button" text="My account">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#Logout_button" text="Logout">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </HBox>
 
-            <!-- Account information labels with FXML ids -->
-            <HBox>
-               <Label text="Name: " style="-fx-text-fill: #FFFFFF;" />
-               <Label fx:id="nameLabel" style="-fx-text-fill: #B0BEC5;" />
-            </HBox>
+		<HBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml">
+			<VBox alignment="CENTER" spacing="27" style="-fx-background-color: #2D0517; -fx-padding: 20; -fx-border-color: #2D0517; -fx-border-radius: 5; -fx-background-radius: 5;">
 
-            <HBox>
-               <Label text="Surname: " style="-fx-text-fill: #FFFFFF;" />
-               <Label fx:id="surnameLabel" style="-fx-text-fill: #B0BEC5;" />
-            </HBox>
-            
-             <HBox>
-               <Label text="Age: " style="-fx-text-fill: #FFFFFF;" />
-               <Label fx:id="ageLabel" style="-fx-text-fill: #B0BEC5;" />
-            </HBox>
-            
-             <HBox>
-               <Label text="Email: " style="-fx-text-fill: #FFFFFF;" />
-               <Label fx:id="surnameLabel" style="-fx-text-fill: #B0BEC5;" />
-            </HBox>
-            
-             <HBox>
-               <Label text="Badges: " style="-fx-text-fill: #FFFFFF;" />
-               <Label fx:id="badgesLabel" style="-fx-text-fill: #B0BEC5;" />
-            </HBox>
+				<Label fx:id="myAccountLabel" text="My Account" style="-fx-text-fill: #FFFFFF; -fx-font-family: 'Arial'; -fx-font-size: 24.0; -fx-font-weight: bold; -fx-alignment: CENTER; -fx-padding: 10;" />
 
-         </VBox>
-      </HBox>
-      
-   </children>
+				<Label fx:id="nameLabel" text="Name: Fred" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-alignment: CENTER;textAlignment="JUSTIFY"; />
+				<Label fx:id="surnameLabel" text="Surname: Johnson" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-alignment: CENTER;textAlignment="JUSTIFY"; />
+				<Label fx:id="ageLabel" text="Age: 30" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-alignment: CENTER;textAlignment="JUSTIFY"; />
+				<Label fx:id="emailLabel" text="Email: fred@example.com" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-alignment: CENTER;textAlignment="JUSTIFY"; />
+				<Label fx:id="badgesLabel" text="Badges: [True, False, True]" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-alignment: CENTER;textAlignment="JUSTIFY"; />
+			</VBox>
+		</HBox>
+
+    </children>
 </VBox>
