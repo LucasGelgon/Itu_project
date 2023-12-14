@@ -110,7 +110,7 @@ public class AccountPageController {
 	public void Logout_button(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("ConnectionPage.fxml"));
 		root = loader.load();
-		AccountPageController controller = loader.getController() ;
+		ConnectionPageController controller = loader.getController() ;
 		controller.set_model(model);
 		
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
