@@ -4,6 +4,11 @@
 JavaFX SDK version 17.0.9 <br>
 Java SE-15
 
+## Requirements ##
+-Change the path of the QuestionX.txt in the file model.java
+-Be sure that JavaFx is correctly configure in the project. 
+https://coderslegacy.com/java/introduction-to-javafx/
+
 ## How it works ##
 When you start the application you can login into the app. 
 1. First start by creating an account 
